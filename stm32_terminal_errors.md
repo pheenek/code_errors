@@ -10,3 +10,6 @@ Don't forget the '-f' command option for specifying the configuration file
 Make sure that you have the correct version of libncurses for your PC. Try:
 
 	sudo apt-get install libncurses5:amd64
+	
+## 3. HardFault while debugging
+Ensure that the correct linker script and startup file are being used while compiling.
