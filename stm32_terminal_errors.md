@@ -13,3 +13,8 @@ Make sure that you have the correct version of libncurses for your PC. Try:
 	
 ## 3. HardFault while debugging
 Ensure that the correct linker script and startup file are being used while compiling.
+
+## 4. arm-none-eabi-gdb: timed out while waiting for target halted
+Set the reset to occur internally over the SWD channel with no pins used. Use the command:
+
+	reset_config none separate
