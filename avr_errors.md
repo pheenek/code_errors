@@ -2,7 +2,7 @@
 # Errors encountered in avr
 
 ## 1. Undefined behaviour with UDRIE (USART Data Register Empty Interrupt)
-- The USART continuously tranmits the buffer
+- The USART continuously tranmits the buffer contents
 
 ### Solution:
 - The UDRE flag is set by default.
