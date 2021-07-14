@@ -15,3 +15,11 @@
 ### Solution
 	CFLAGS += -Wl,-u,vfscanf,-lscanf_flt,-u,vfprintf,-lprintf_flt
 	
+## 3. Compilation error when using assembly:
+	relocation truncated to fit: R_AVR_7_PCREL against 'no symbol'
+	
+### Solution
+- Apparently the assembly commands have a limitation for the number of words they can skip over.
+- For the branch commands, it's 64 words, while an rjmp command (relative jump) can do up to 1k words.
+- The solution is to stick within the limits for the number of words that the command can skip over
+	
