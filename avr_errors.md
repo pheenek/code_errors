@@ -23,3 +23,16 @@
 - For the branch commands, it's 64 words, while an rjmp command (relative jump) can do up to 1k words.
 - The solution is to stick within the limits for the number of words that the command can skip over
 	
+
+## 4. Undefined reference to C functions in Arduino
+- That's honestly the only description I could find for this error so far.
+- The issue manifests as a linking error, with the following error at compilation:
+	/tmp/ccRK4E5M.ltrans0.ltrans.o: In function `global constructors keyed to 65535_0_fingerprint_touch_driver.c.o.4497':
+
+- It seems like it's been a while since I've mixed C code with C++ code. I had forgotten a small but crucial part to calling C code in C++ code:
+	#ifdef __cplusplus
+		extern "C" {
+	#endif
+	
+- This presents a name-mangling problem since we're using a C++ compiler to compile the C code
+- I hope for the sake of my sanity, I don't forget this again
