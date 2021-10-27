@@ -40,3 +40,10 @@
 	
 - This presents a name-mangling problem since we're using a C++ compiler to compile the C code
 - I hope for the sake of my sanity, I don't forget this again
+
+## 5. Buffer sizes!!!!
+- Allocating just enough length in a buffer is a tragedy waiting to happen. Especially when you don't entirely have control over the content being put inside the buffer.
+- I've struggled with this for an entire 24 hours before I even thought of checking if the buffer size is the issue.
+- The task was reading from Serial. The result was no null-terminated character string therefore no string hence failure of the program logic!
+	#### In case a character string is having undefined behaviour, examine the buffer size to begin with!
+
