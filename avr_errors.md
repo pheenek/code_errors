@@ -47,3 +47,6 @@
 - The task was reading from Serial. The result was no null-terminated character string therefore no string hence failure of the program logic!
 	#### <span style="color: red;">In case a character string is having undefined behaviour, examine the buffer size to begin with</span>
 
+## 6. ISR alias
+- To declare two ISRs with the same code, the following will definitely prove very useful:
+	ISR(PCINT1_vect, ISR_ALIASOF(PCINT0_vect));
