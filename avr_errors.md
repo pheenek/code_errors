@@ -49,4 +49,6 @@
 
 ## 6. ISR alias
 - To declare two ISRs with the same code, the following will definitely prove very useful:
+	<pre><code>
 	ISR(PCINT1_vect, ISR_ALIASOF(PCINT0_vect));
+	</code></pre>
