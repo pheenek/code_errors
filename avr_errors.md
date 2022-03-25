@@ -52,3 +52,15 @@
 	<pre><code>
 	ISR(PCINT1_vect, ISR_ALIASOF(PCINT0_vect));
 	</code></pre>
+	
+## 7. AVR 8-bit Timer2
+- While testing functionality with Timer2, I've had trouble getting it to output the correct period using the timer overflow.
+	#### Reproduction:
+	*Setup:* 
+	- 16MHz system frequency
+	- ATMega2560 or ATMega1284P
+	- Timer clock prescaler to 64
+	*Expectation:*
+	- The timer should overflow with a period of 1.024 ms
+	*Actual result:*
+	- The timer period produced was rather 2.048 ms
