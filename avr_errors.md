@@ -60,7 +60,9 @@
 	- 16MHz system frequency
 	- ATMega2560 or ATMega1284P
 	- Timer clock prescaler to 64
+
 	*Expectation:*
 	- The timer should overflow with a period of 1.024 ms
+
 	*Actual result:*
 	- The timer period produced was rather 2.048 ms
